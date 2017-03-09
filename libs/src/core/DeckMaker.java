@@ -231,6 +231,7 @@ public class DeckMaker {
 			}
 			
 			cardName = FrogUtils.CleanCardName(cardName);
+			//NMBTODO: get description from AllSets.json.  Via FrogUtils? Performance?
 			
 			String cardKey = Card.getCardKey(cardName, set, printing, language);
 			Card card = newDeck.getCard(cardKey);

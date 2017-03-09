@@ -20,6 +20,8 @@ public class FrogUtils {
 	public static Gson gson;
 	public static boolean DEBUG = false;
 	
+	//NMBTODO: parse description from AllSets.json
+	
 	public static JsonObject JsonObjectFromFile(String fileUrl){
 		try{
 			File jsonFile = new File(fileUrl);

@@ -10,6 +10,7 @@ public class Card {
 	public String printing;
 	public String language;
 	public String multiverseId;
+	public String description;
 	
 	public String line;
 	
@@ -48,6 +49,27 @@ public class Card {
 				if(i < words.length-1)displayName += " ";
 			}
 			return displayName;
+		}catch(Exception e){return name;}
+	}
+	
+	public String getDescription(){
+		try{
+			String description = "";
+			String processedDescription = description;
+			int start = name.indexOf("(")+1;
+			int end = name.indexOf(")");
+			if(start >= 0 && end > start){
+				processedDescription = name.substring(start,end);
+			}
+			String[] words = (processedDescription + "").split(" ");
+			for(int i = 0; i < words.length; i++){
+				description += (words[i].charAt(0)+"").toUpperCase();
+				if(words[i].length() > 1){
+					description += words[i].substring(1);
+				}
+				if(i < words.length-1)description += " ";
+			}
+			return description;
 		}catch(Exception e){return name;}
 	}
 
